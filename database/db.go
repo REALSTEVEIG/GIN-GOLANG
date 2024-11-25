@@ -36,5 +36,5 @@ host, user, password, dbname, port)
 
 	log.Println("Database connected successfully")
 
-	DB.AutoMigrate(&models.Todo{}, &models.Project{})
+	DB.AutoMigrate(&models.Todo{}, &models.Project{}, &models.User{})
 }
