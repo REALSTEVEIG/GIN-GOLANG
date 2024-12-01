@@ -30,4 +30,13 @@ func SetupRoutes(r *gin.Engine) {
 		projectRoutes.PUT("/:id", middlewares.AuthMiddleware(), controllers.UpdateProject)
 		projectRoutes.DELETE("/:id", middlewares.AuthMiddleware(), controllers.DeleteProject)
 	}
+	publicationRoutes := r.Group("/api/publications")
+	{
+		publicationRoutes.GET("/", controllers.GetAllPublications)
+		publicationRoutes.POST("/", middlewares.AuthMiddleware(), controllers.CreatePublication)
+		publicationRoutes.GET("/:id", controllers.GetSinglePublication)
+		publicationRoutes.PUT("/:id", middlewares.AuthMiddleware(), controllers.UpdatePublication)
+		publicationRoutes.DELETE("/:id", middlewares.AuthMiddleware(), controllers.DeletePublication)
+	}
+
 }

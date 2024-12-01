@@ -10,10 +10,10 @@ import (
 )
 
 type SignUpRequest struct {
-	Firstname string `json:"fristname" binding:"required"`
-	Lastname string `json:"lastname" bindind:"required"`
-	Email string `json:"email" binding:"required,email"`
-	Password string `json:"password" binding:"required,min=8"`
+	Firstname string `json:"firstname" binding:"required"`
+	Lastname  string `json:"lastname" binding:"required"`
+	Email     string `json:"email" binding:"required,email"`
+	Password  string `json:"password" binding:"required,min=8"`
 }
 
 type LoginRequest struct {
